@@ -30,6 +30,7 @@ export async function getFactions(apiKey, authDomain, databaseURL, projectId, st
 
     var dbref = ref(db);
     await get(child(dbref, 'factions')).then((factions => {
+        console.log(factions);
         factions.forEach(faction => {
             let value = faction.val();
             factionArray.push(value);
